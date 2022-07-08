@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import Header from "./components/Header";
+import SignUp from "./pages/auth/SignUp";
+import "./App.css";
+import Login from "./pages/auth/Login";
+import { Routes, Route } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import DashboaderHeader from "./components/DashboaderHeader";
+import UserState from "./context/UserState";
+import { AnimatePresence, AnimateSharedLayout, LayoutGroup } from "framer-motion";
 
 function App() {
+
+
+  
+  const { state, dispatch } = useContext(UserState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <AnimatePresence exitBeforeEnter>
+        <LayoutGroup>
+          {!state.user ? <Header /> : <DashboaderHeader />}
+          <div className=" h-[calc(100vh-100px)] flex flex-col items-center justify-center">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="sign-up" element={<SignUp />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </LayoutGroup>
+      </AnimatePresence>
     </div>
   );
 }
