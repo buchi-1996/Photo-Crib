@@ -7,14 +7,13 @@ const Header = () => {
   const { state, dispatch } = useContext(UserState);
   const navigate = useNavigate()
 
-  console.log(state);
   return (
     <header className="py-3 bg-gray-50">
       <div className="container mx-auto">
         <nav className="flex flex-row items-center justify-between">
           <div className="logo">
             <Link to="/">
-            <h2 className="text-xl font-bold antialiased">Logo</h2>
+            <h2 className="text-xl font-bold antialiased">Photo<span className="font-bold text-2xl italic text-indigo-800">C</span>rib</h2>
             </Link>
           </div>
           {/* <ul className="links flex flex-row items-center space-x-10 justify-center">

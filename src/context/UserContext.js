@@ -4,7 +4,8 @@ import UserState from './UserState';
 
 const UserContext = ({children}) => {
     const initialState = {
-        user: null
+        user: null,
+        isLoading: false
     }
 
     const [state, dispatch] = useReducer(reducer, initialState);

@@ -9,19 +9,19 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import DashboaderHeader from "./components/DashboaderHeader";
 import UserState from "./context/UserState";
-import { AnimatePresence, AnimateSharedLayout, LayoutGroup } from "framer-motion";
+import { AnimatePresence,  LayoutGroup } from "framer-motion";
 
 function App() {
 
 
   
-  const { state, dispatch } = useContext(UserState);
+  const { state } = useContext(UserState);
   return (
     <div className="app">
       <AnimatePresence exitBeforeEnter>
         <LayoutGroup>
           {!state.user ? <Header /> : <DashboaderHeader />}
-          <div className=" h-[calc(100vh-100px)] flex flex-col items-center justify-center">
+          <div className=" h-full flex flex-col justify-center">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="sign-up" element={<SignUp />} />

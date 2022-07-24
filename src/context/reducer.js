@@ -1,4 +1,3 @@
-import React from "react";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -12,6 +11,11 @@ const reducer = (state, action) => {
         ...state,
         user: null,
       };
+      case 'IS_LOADING' :
+        return {
+          ...state,
+          isLoading: !state.isLoading
+        }
     default:
       return state;
   }

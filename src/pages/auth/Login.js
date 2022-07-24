@@ -11,12 +11,10 @@ import Error from "../../components/Error";
 import Loader from "../../components/Loader/Loader";
 import UserState from "../../context/UserState";
 import { useNavigate } from "react-router-dom";
-import { async } from "@firebase/util";
 import { motion } from "framer-motion";
 import {
   pageSlide,
   pageTransition,
-  pageZoom,
 } from "../../helpers/framer-motion";
 
 const Login = () => {
@@ -28,8 +26,9 @@ const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSucess, setIsSucess] = useState("");
-  const { state, dispatch } = useContext(UserState);
+  const { dispatch } = useContext(UserState);
   const navigate = useNavigate();
+  
 
   const auth = getAuth(app);
 
@@ -43,7 +42,7 @@ const Login = () => {
     });
 
     return () => listener();
-  }, [state.user]);
+  }, [auth]);
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -97,7 +96,7 @@ const Login = () => {
   // }, [])
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto h-[calc(100vh-100px)] flex flex-col justify-center">
       <motion.div
         initial="initial"
         animate="in"

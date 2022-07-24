@@ -72,7 +72,7 @@ const SignUp = () => {
   }, [errMessage]);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto h-[calc(100vh-100px)] flex flex-col justify-center">
       <motion.div
         initial="initial"
         animate="in"

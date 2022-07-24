@@ -1,4 +1,4 @@
-import React,  {useContext} from 'react'
+import {useContext} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import UserState from '../context/UserState';
 import { getAuth, signOut } from "firebase/auth";
@@ -35,7 +35,7 @@ const DashboaderHeader = () => {
           <button onClick={handleSignOut} className="bg-purple-700 hover:bg-purple-800 transition-all duration-300 ease-in-out font-bold text-white rounded-lg w-24 py-3">Sign Out</button>
             <button className='flex flex-row items-center space-x-2'>
             <span className='capitalize mt-1'>{state.user.displayName}</span>
-            <span className="w-10 h-10 border border-gray-100 overflow-hidden rounded-full"><img src={state.user.photoURL} alt="image" className='object-cover w-full h-full' /></span>
+            <span className="w-10 h-10 border border-gray-100 overflow-hidden rounded-full"><img src={state.user.photoURL} alt="" className='object-cover w-full h-full' /></span>
             </button>
            
           </div>
