@@ -22,7 +22,7 @@ const Home = () => {
     const getData = async () => {
       setIsLoading(true);
       try {
-        const querySnapshot = await getDocs(collection(db, "Photos"));
+        const querySnapshot = await getDocs(collection(db, "Photos"), orderBy('createdAt', 'desc'));
         const data = querySnapshot.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
