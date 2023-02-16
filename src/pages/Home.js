@@ -15,6 +15,7 @@ const Home = () => {
   const [photos, setPhotos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const db = getFirestore(app);
+  console.log(db)
 
   console.log(isLoading);
 
