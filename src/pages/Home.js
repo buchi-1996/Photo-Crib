@@ -21,7 +21,7 @@ const Home = () => {
 
   useEffect(() => {
     const getData = async () => {
-      setIsLoading(true);
+      // setIsLoading(true);
       try {
         const querySnapshot = await getDocs(collection(db, "Photos"), orderBy('createdAt', 'desc'));
         const data = querySnapshot.docs.map((doc) => ({
@@ -32,7 +32,7 @@ const Home = () => {
         console.log(data);
         setIsLoading(false);
       } catch (e) {
-        console.log('error', e);
+        console.log('error:', e);
         setIsLoading(false);
       }
     };
