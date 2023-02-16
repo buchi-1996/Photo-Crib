@@ -4,7 +4,6 @@ import {
   setPersistence,
   signInWithEmailAndPassword,
   browserSessionPersistence,
-  onAuthStateChanged,
 } from "firebase/auth";
 import app from "../../lib/firebase";
 import Error from "../../components/Error";
@@ -32,18 +31,9 @@ const Login = () => {
 
   const auth = getAuth(app);
 
-  useEffect(() => {
-    const listener = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log("logged In");
-      } else {
-        console.log("user signed out");
-      }
-    });
+  
 
-    return () => listener();
-  }, [auth]);
-
+  // Handle User SignIn
   const handleSignIn = (e) => {
     e.preventDefault();
     setErrorMessage("");

@@ -8,6 +8,8 @@ const DashboaderHeader = () => {
     const {state, dispatch} = useContext(UserState); 
     const auth = getAuth(app)
     const navigate = useNavigate()
+    
+    // Handle User Signs Out
     const handleSignOut = () => {
       signOut(auth).then(() => {
         navigate('/sign-up')
@@ -21,9 +23,9 @@ const DashboaderHeader = () => {
     <header className="py-4 bg-gray-50">
       <div className="container mx-auto">
         <nav className="flex flex-row items-center justify-between">
-          <div className="logo">
+        <div className="logo">
             <Link to="/">
-            <h2 className="text-xl font-bold antialiased">Logo</h2>
+            <h2 className="text-xl font-bold antialiased">Photo<span className="font-bold text-2xl italic text-indigo-800">C</span>rib</h2>
             </Link>
           </div>
           {/* <ul className="links flex flex-row items-center space-x-10 justify-center">

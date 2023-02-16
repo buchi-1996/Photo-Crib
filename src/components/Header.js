@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import {Link, useNavigate} from 'react-router-dom'
-import UserState from "../context/UserState";
+import React from "react";
+import {Link} from 'react-router-dom'
+// import UserState from "../context/UserState";
 
 
 const Header = () => {
-  const { state, dispatch } = useContext(UserState);
-  const navigate = useNavigate()
+  // const { state, dispatch } = useContext(UserState);
+  // const navigate = useNavigate()
 
   return (
     <header className="py-3 bg-gray-50">

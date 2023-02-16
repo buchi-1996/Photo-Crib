@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import UserState from "../context/UserState";
+import React from "react";
+// import UserState from "../context/UserState";
 
 const ImgCard = ({ Description, Title, id, Photo }) => {
-  const { state } = useContext(UserState);
+  // const { state } = useContext(UserState);
 
   return (
     <>

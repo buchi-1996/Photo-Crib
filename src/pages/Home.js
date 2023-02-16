@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {
   collection,
-  doc,
+  // doc,
   getDocs,
   getFirestore,
-  query,
+  // query,
   orderBy
 } from "firebase/firestore";
 import app from "../lib/firebase";
 import ImgCard from "../components/ImgCard";
-import Loader from "../components/Loader/Loader";
+// import Loader from "../components/Loader/Loader";
 
 const Home = () => {
   const [photos, setPhotos] = useState([]);
@@ -31,7 +31,7 @@ const Home = () => {
         console.log(data);
         setIsLoading(false);
       } catch (e) {
-        console.log(e);
+        console.log('error', e);
         setIsLoading(false);
       }
     };

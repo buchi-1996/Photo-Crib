@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -7,7 +7,7 @@ import {
 } from "firebase/auth";
 import app from "../../lib/firebase";
 import Error from "../../components/Error";
-import UserState from "../../context/UserState";
+// import UserState from "../../context/UserState";
 import Loader from "../../components/Loader/Loader";
 import {motion } from 'framer-motion'
 import { pageSlide, pageTransition } from "../../helpers/framer-motion";
@@ -21,10 +21,10 @@ const SignUp = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSucess, setIsSucess] = useState("");
-  const { state, dispatch } = useContext(UserState);
+  // const { state, dispatch } = useContext(UserState);
   const auth = getAuth(app);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "SignUp - PhotoCrib";
