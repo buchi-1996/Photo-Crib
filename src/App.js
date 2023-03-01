@@ -10,11 +10,10 @@ import Dashboard from "./pages/Dashboard";
 import DashboaderHeader from "./components/DashboaderHeader";
 import UserState from "./context/UserState";
 import { AnimatePresence,  LayoutGroup } from "framer-motion";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import Settings from "./pages/Settings";
 
 function App() {
-
-
-  
   const { state } = useContext(UserState);
   return (
     <div className="app">
@@ -26,7 +25,16 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="sign-up" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={
+              <ProtectedRoute auth={state.user}>
+                <Dashboard />
+                </ProtectedRoute>
+             } />
+              <Route path="/settings" element={
+              <ProtectedRoute auth={state.user}>
+                <Settings />
+                </ProtectedRoute>
+             } />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

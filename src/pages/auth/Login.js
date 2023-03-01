@@ -30,6 +30,7 @@ const Login = () => {
   
 
   const auth = getAuth(app);
+  console.log(auth)
 
   
 

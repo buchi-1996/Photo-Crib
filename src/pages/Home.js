@@ -17,7 +17,6 @@ const Home = () => {
   const db = getFirestore(app);
   console.log(db)
 
-  console.log(isLoading);
 
   useEffect(() => {
     const getData = async () => {
