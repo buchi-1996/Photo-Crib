@@ -10,7 +10,6 @@ import {
 import { getAuth, updateProfile } from "firebase/auth";
 import Modal from "../components/Modal";
 import CropImageModal from "../components/cropper/CropImageModal";
-import { ClipLoader } from "react-spinners";
 import Loader from "../components/loader/Loader";
 
 const Settings = () => {
