@@ -9,6 +9,7 @@ import {
 } from "firebase/firestore";
 import app from "../lib/firebase";
 import ImgCard from "../components/ImgCard";
+import Loader from "../components/loader/Loader";
 // import Loader from "../components/Loader/Loader";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [myError, setMyError] = useState("");
   const db = getFirestore(app);
+
   console.log(db);
 
   useEffect(() => {
@@ -44,7 +46,11 @@ const Home = () => {
       }
     };
     return () => getData();
-  }, [db]);
+  }, [db, isLoading]);
+
+  const handleReload = () => {
+    setIsLoading(true)
+  }
 
   return (
     <section>
@@ -66,12 +72,12 @@ const Home = () => {
       <div className="container mx-auto my-10">
         <div>
           {isLoading ? (
-            <h1>Loding...</h1>
+            <div className="flex flex-row items-center justify-center"><Loader color='bg-purple-500' /></div>
           ) : myError ? (
             <div className="flex flex-col items-center justify-center space-y-4">
               <img src="../../../undraw_signal_searching_re_yl8n.svg" alt="" className="w-44 h-44"/>
               <p className="text-center mt-24">Failed to fetch from database</p>
-              <button className="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Retry</button>
+              <button onClick={handleReload} className="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Retry</button>
             </div>
           ) : (
             <div className="grid xs:grid-cols-1 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

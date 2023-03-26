@@ -189,7 +189,7 @@ const Login = () => {
                 isInvalid ? "cursor-not-allowed" : "cursor-pointer"
               } hover:bg-purple-800 transition-all duration-300 ease-in-out h-12 font-bold text-white rounded-lg w-full py-2`}
             >
-              {!isLoading ? "Log In" : <Loader />}
+              {!isLoading ? "Log In" : <Loader color='bg-white' />}
             </button>
           </form>
         </div>

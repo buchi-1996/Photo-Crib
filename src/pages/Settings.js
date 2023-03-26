@@ -11,6 +11,7 @@ import { getAuth, updateProfile } from "firebase/auth";
 import Modal from "../components/Modal";
 import CropImageModal from "../components/cropper/CropImageModal";
 import { ClipLoader } from "react-spinners";
+import Loader from "../components/loader/Loader";
 
 const Settings = () => {
   const { state, dispatch } = useContext(UserState);
@@ -137,10 +138,9 @@ const Settings = () => {
                     className="w-56 h-56 mx-auto object-contain rounded-full"
                   />
                   {loadingSpinner && (
-                    <ClipLoader
-                      className="absolute inset-0 m-auto"
-                      color="#36d7b7"
-                    />
+                    <div className="absolute top-1/2 bottom-1/2 left-1/2 transform  -translate-x-1/2 -translate-y-1/2">
+                      <Loader color="bg-white" />
+                    </div>
                   )}
                 </div>
                 {progress !== 0 ? (
@@ -241,10 +241,7 @@ const Settings = () => {
       </form>
       {state.isModalOpen && (
         <Modal>
-          <CropImageModal
-            selected={selected}
-            setFile={setFile}
-          />
+          <CropImageModal selected={selected} setFile={setFile} />
         </Modal>
       )}
     </div>

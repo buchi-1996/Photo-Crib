@@ -1,9 +1,9 @@
 import React from 'react';
 import './loader.css'
 
-const Loader = () => {
+const Loader = ({color}) => {
   return (
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    <div className={`lds-ellipsis`}><div className={`${color}`}></div><div className={`${color}`}></div><div className={`${color}`}></div><div className={`${color}`}></div></div>
   )
 }
 
