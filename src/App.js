@@ -15,8 +15,9 @@ import Settings from "./pages/Settings";
 
 function App() {
   const { state } = useContext(UserState);
+  console.log(state.isModalOpen);
   return (
-    <div className="app">
+    <div className={`${state.isModalOpen ? 'overflow-hidden' : 'overflow-auto'} relative app`}>
       <AnimatePresence exitBeforeEnter>
         <LayoutGroup>
           {!state.user ? <Header /> : <DashboaderHeader />}

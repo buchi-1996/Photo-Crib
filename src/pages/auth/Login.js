@@ -7,7 +7,7 @@ import {
 } from "firebase/auth";
 import app from "../../lib/firebase";
 import Error from "../../components/Error";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../components/loader/Loader";
 import UserState from "../../context/UserState";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";

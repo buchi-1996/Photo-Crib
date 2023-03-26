@@ -11,6 +11,7 @@ const UserContext = ({children}) => {
         operationType: null,
         isPersisted: false,
         authPending: true,
+        isModalOpen : false,
     }
 
     const [state, dispatch] = useReducer(reducer, initialState);

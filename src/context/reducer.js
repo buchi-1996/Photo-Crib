@@ -31,6 +31,19 @@ const reducer = (state, action) => {
             ...state,
             authPending: action.payload
           }
+          case 'IS_MODAL_OPEN' : 
+          return {
+            ...state,
+            isModalOpen: !state.isModalOpen
+          }
+          case 'UPDATE_PROFILE_PIC' : 
+          return {
+            ...state,
+            user: {
+              ...state.user,
+              photoURL: action.payload
+            }
+          }
     default:
       return state;
   }

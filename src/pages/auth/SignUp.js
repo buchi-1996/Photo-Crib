@@ -8,7 +8,7 @@ import {
 import app from "../../lib/firebase";
 import Error from "../../components/Error";
 import UserState from "../../context/UserState";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../components/loader/Loader";
 import {motion } from 'framer-motion'
 import { pageSlide, pageTransition } from "../../helpers/framer-motion";
 
