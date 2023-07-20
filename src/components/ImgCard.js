@@ -6,7 +6,7 @@ const ImgCard = ({ Description, Title, id, Photo }) => {
 
   return (
     <>
-      <div className="relative rounded shadow-lg my-3 h-full overflow-hidden transform transition duration-300ms ease-linear z-100 cursor-pointer">
+      <div className="relative rounded shadow-lg my-3 h-full overflow-hidden transform transition hover:scale-125 duration-300ms ease-linear z-100 cursor-pointer">
         <img src={Photo} alt="" className="w-full h-full object-cover aspect-video" />
         <div className="absolute bg-gradient-to-t from-black/75 to-transparent inset-0" />
         <h4 className="title absolute bottom-5 left-5 text-white font-medium">{Title}</h4>
